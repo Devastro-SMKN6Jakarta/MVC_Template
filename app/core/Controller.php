@@ -22,4 +22,28 @@ class Controller
   {
     require_once '../app/views/templates/footer.php';
   }
+
+  public function isLogin()
+  {
+    if (!isset($_SESSION['login'])) {
+      header('Location: ' . BASEURL . '/auth');
+      exit;
+    }
+  }
+
+  public function isNotLogin()
+  {
+    if (isset($_SESSION['login'])) {
+      header('Location: ' . BASEURL . '/home');
+      exit;
+    }
+  }
+
+  public function isAdmin()
+  {
+    if ($_SESSION['role'] != 'admin') {
+      header('Location: ' . BASEURL . '/home');
+      exit;
+    }
+  }
 }

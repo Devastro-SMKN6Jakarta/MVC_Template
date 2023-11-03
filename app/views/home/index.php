@@ -1,3 +1,3 @@
 <h1>
-  Hai Semuaa
+  Hai Semua
 </h1>
